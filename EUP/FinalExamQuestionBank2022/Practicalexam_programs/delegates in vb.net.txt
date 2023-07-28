@@ -1,0 +1,29 @@
+Delegate Sub deladd(Byval a as integer,Byval b as integer)
+Delegate Sub delsubt(Byval a as integer,Byval b as integer)
+
+Public Class Test3
+
+Sub add(Byval a as integer,Byval b as integer)
+Dim sum as integer
+sum=a+b
+Console.writeLine("Sum is:"&sum)
+End sub
+
+Sub Subt(Byval a as integer,Byval b as integer)
+Dim sub as integer
+sub=a-b
+Console.writeLine("Sub is:"&sub)
+End sub
+
+End Class
+
+Sub Main()
+
+Dim t3 as new Test3()
+t3.add(10,20)
+Dim del as deladd=new deladd(Addressof t3.add)
+del.Invoke(15,25)
+Dim del1 as delsubt=new delsubt(Addressof t3.subt)
+del.Invoke(50,20)
+
+End Sub

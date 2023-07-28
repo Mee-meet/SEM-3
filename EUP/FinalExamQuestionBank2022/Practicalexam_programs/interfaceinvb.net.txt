@@ -1,0 +1,27 @@
+Module Module3
+{ 
+Interface IA1
+Sub sub1(Byval i as integer)
+End Interface
+
+Public class class1 
+Implements IA1
+
+Public sub sub1(Byval i as Integer)
+Console.WriteLine("Value of i "&i)
+End sub
+
+Public Sub display2()
+Console.WriteLine("Hello")
+End Sub
+End class
+
+Public Sub Main()
+Dim c1 as New class1()
+c1.sub1(50)
+c1.display2()
+End Sub
+
+
+
+}
